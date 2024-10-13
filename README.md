@@ -21,4 +21,20 @@ data can easily be entered.
 well-structured tables, reducing data redundancy, improving data integrity, and
 streamlining query performance.
 
+## Project Scope:
+
+### 1.Convert Denormalized to 1NF:
+- Each `ID column` must have unique records
+- Create a composite key of `'CustomerID'` , `'LoanID'` to ensure uniqueness
+
+
+### 2.Convert 1NF to 2NF:
+#### Create table in 2NF structure as :
+- ustomers Table >> CustomerID(PK), CustomerName
+- loans table >> `LoanID(PK)`, `CustomerID(FK)`, LoanAmount, LoanInterestRate, LoanDuration, LoanStartDate,OfficerID(FK)
+- officers table >> `OfficerID(PK)`, OfficerName, OfficerPhone, OfficerEmail, `BranchID(FK)`
+- branch table >> `BranchID(PK)`, BranchName, BranchAddress
+- payments table >> `PaymentID(PK)`, `LoanID(FK)`, PaymentDate, PaymentAmount
+- transactions table >>`TransactionID(PK)`, `LoanID(FK)`, TransactionDate, TransactionType
+
 
